@@ -679,7 +679,7 @@ const RoomForm = ({ onRoomCreated }) => {
     const [peerConnection, setPeerConnection] = useState(null);
     
     // Updated signaling server URL
-    const signalingServerUrl = 'ws://video-call-application-5f1u.onrender.com/webrtc-signaling'; 
+    const signalingServerUrl = 'wss://video-call-application-5f1u.onrender.com/webrtc-signaling'; 
     const signalingWebSocket = useRef(null);
 
     const handleOffer = useCallback(async (offer) => {
