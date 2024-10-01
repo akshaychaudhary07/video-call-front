@@ -656,7 +656,7 @@ const VideoChat = ({ room, stream }) => {
         try {
             await new Promise(resolve => setTimeout(resolve, 1000));
             // Replace the WebSocket URL with the provided URL
-            signalingSocket.current = new WebSocket('wss://video-call-application-5f1u.onrender.com/webrtc-signaling');
+            signalingSocket.current = new WebSocket('ws://video-call-application-5f1u.onrender.com/webrtc-signaling');
 
             signalingSocket.current.onopen = () => {
                 console.log('WebSocket connection established');
