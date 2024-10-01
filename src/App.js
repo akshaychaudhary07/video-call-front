@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import VideoChat from './components/VideoChat';
+import RoomForm from './components/RoomForm';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [roomData, setRoomData] = useState(null);
+    const [localStream, setLocalStream] = useState(null);
+
+    const handleRoomCreated = (data) => {
+        setRoomData(data);
+        setLocalStream(data.stream);
+    };
+
+    return (
+        <div>
+            {!roomData ? (
+                <RoomForm onRoomCreated={handleRoomCreated} />
+            ) : (
+                <VideoChat room={roomData} stream={localStream} />
+            )}
+        </div>
+    );
+};
 
 export default App;

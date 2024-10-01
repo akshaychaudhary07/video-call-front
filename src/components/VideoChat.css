@@ -1,0 +1,37 @@
+.video-chat-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.video-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.local-video, .remote-video {
+    width: 48%;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    background-color: black;
+    transform: scaleX(-1);
+}
+
+.controls {
+    margin-top: 15px;
+}
+
+.controls button {
+    margin: 5px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #0056b3;
+}
